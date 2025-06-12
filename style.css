@@ -1,0 +1,172 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#wrapper{
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(37, 50, 55) 100.2%);
+}
+#title{
+  display: block;
+  position: relative;
+  color:rgb(250, 249, 249);
+  text-shadow: 1px 1px 4px black;
+  padding: 1%;
+}
+#artist{
+  display: block;
+  position: relative;
+  color: rgb(255, 255, 255);
+  padding:1%;
+}
+#player{
+  display: flex;
+}
+#player img{
+  width: 10%;
+  filter: invert();
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 10%;
+}
+
+#player #play img{
+  background: linear-gradient(30deg,white,lightblue);
+  border-radius: 100%;
+}
+#player #pause img{
+  background: linear-gradient(30deg,white,lightblue);
+  background-color: white;
+  border-radius: 100%;
+}
+#player img:hover{
+  width: 11%;
+  transition: 0.4s;
+}
+#player #pause{
+  display: none;
+}
+#list{
+  display: block;
+  top: -100%;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  background:linear-gradient(35deg,white,black);
+  border-radius: 10px;
+  overflow: scroll;
+  scrollbar-width: none;
+  transition: 0.5s;
+}
+#list::-webkit-scrollbar{
+  display: none;
+}
+#list div{
+  padding: 2%;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.7s;
+}
+#list div:hover{
+  background: linear-gradient(60deg,white,black);
+  transition: 0.7s;
+}
+#list #playlist{
+  text-align: center;
+  padding: 3% 0% 2% 0%;
+  border-bottom: 1px solid black;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  background:linear-gradient(35deg,white,black);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#playbtn:checked ~ #player #play{
+  display: none;
+}
+#playbtn:checked ~ #player #pause{
+  display: block;
+}
+#listbtn:checked ~ #wrapper #list{
+  top:0;
+}
+#loopbtn:checked ~ #wrapper #player #loop{
+  background: linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%);
+}
+#repeatbtn:checked ~ #wrapper #player #repeat{
+  background: linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%);
+}
+#randombtn:checked ~ #wrapper #player #random{
+  background: linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%);
+}
+
+
+/* for currently playing song */
+.selected{
+  background: linear-gradient(95deg,white,black);
+  transition: 0.7s;
+}
+
+#progressbar{
+  -webkit-appearance: none;
+  height: 3px;
+  background: linear-gradient(30deg, red, rgb(88, 254, 88), blue);
+  width: 80%;
+  margin: 1% 0;
+}
+
+#progressbar::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  height: 15px;
+  background-color: gold; 
+  border: 3px solid white;
+}
+
+
+
+
+.themeslist {
+  position: absolute;
+  z-index: 2000;
+  right: 30px;
+  bottom: -20vh;
+  padding: 10px;
+  background:linear-gradient(60deg,black,grey,white,black);
+  width: 20%;
+  border-radius: 1rem;
+  display:none;
+  /* visibility: hidden; */
+}
+.themeslist label{
+  display: block;
+  font-size: 1.2rem;
+  border-bottom:1px dashed black;
+  width: 100%;
+  padding-bottom: 1rem;
+  transition: 0.5s;
+}
+.themeslist label:hover{
+  color: rgb(114, 114, 114);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition:0.5s;
+}
+
+.showlist{
+  position: absolute;
+  right: 30px;
+  display: block;
+  bottom: 20vh;
+}
+#about{
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+}

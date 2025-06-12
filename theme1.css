@@ -1,0 +1,54 @@
+#theme{
+  width: 50%;
+  height: 70vh;
+  background-image: url(theme/night.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden; 
+  background-position: bottom;
+  left: 25%;
+}
+#platform{
+  display: block;
+  height: 140px;
+  width: 500%;
+  background-image:url(theme/Img_02.png);
+  position: absolute;
+  bottom: 0%;
+  background-repeat: repeat-x;
+}
+#car{
+  position: absolute;
+  bottom: 6%;
+  right: 25%;
+}
+#car img{
+  width: 20%;
+}
+#playbtn:checked ~ #theme #platform{
+  animation: moving 15s linear infinite;
+}
+#playbtn:checked ~ #theme #car{
+  animation: jump 1s linear infinite;
+}
+@keyframes moving{
+  100%{transform:translateX(-70%);}
+}
+@keyframes jump{
+  100%{transform: translateY(-1px);}
+  50%{
+    transform: translateY(1px);
+  }
+}
+
+
+
+@keyframes rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

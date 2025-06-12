@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme1.css" />
+    <link rel="shortcut icon" href="icons/music.png" type="image/x-icon">
+    <title>Music</title>
+  </head>
+  <body>
+    <input type="radio" id="loopbtn" name="loop" style="display: none;" checked/>
+    <input type="radio" id="repeatbtn" name="loop" style="display: none;"/>
+    <input type="radio" id="randombtn" name="loop" style="display: none;"/>
+    <input type="checkbox" id="listbtn" style="display: none" />
+    <div id="wrapper">
+      <input type="checkbox" id="playbtn" style="display: none" />
+      <div id="title">
+        <marquee><h2 id="songtitle">title</h2></marquee>
+      </div>
+      <h3 id="artist">artist</h3>
+      <div id="theme">
+        <div id="platform"></div>
+        <div id="car">
+          <img src="theme/car2.png" alt="not found" />
+        </div>
+      </div>
+      <input type="range" name="" id="progressbar" value="0">
+      <div id="player">
+        <div id="loop">
+          <label for="loopbtn"><img src="icons/loop.png" /></label>
+        </div>
+        <div id="repeat">
+          <label for="repeatbtn"><img src="icons/repeat.png" /></label></div>
+        <div id="random"><label for="randombtn"><img src="icons/random.png" alt="" /></label></div>
+        <div id="previous"><img src="icons/previous.png" /></div>
+        <div id="play">
+          <label for="playbtn"><img src="icons/play.png" /></label>
+        </div>
+        <div id="pause">
+          <label for="playbtn"><img src="icons/pause.png" /></label>
+        </div>
+        <div id="next"><img src="icons/next.png" /></div>
+        <div id="listicon">
+          <label for="listbtn"><img src="icons/playlist.png" alt="" /></label>
+        </div>
+        <div id="themeWrap">
+          <label for="themebtn">
+            <img src="icons/theme.png">
+          </label>
+          <input type="checkbox" name="" id="themebtn" style="display: none;">
+        </div>
+        
+      </div>
+      <div id="list">
+        <div id="playlist"><h1>Playlist</h1></div>
+      </div>
+      <div class="themeslist">
+		<label for="Default" data-theme-input>Default<input type="radio" name="themes" id="Default" style="display: none;" checked></label><br>
+		<label for="DarkMode" data-theme-input>LightMode<input type="radio" name="themes" id="DarkMode" style="display: none;"></label><br>
+		<label for="theme3" data-theme-input>Theme 3<input type="radio" name="themes" id="theme3" style="display:none"></label>
+      </div>
+    </div>
+    <audio id="myAudio" style="display: none;" controls>
+    </audio>
+    <script src="index.js"></script>
+	<script src="darktheme.js"></script>
+  </body>
+  </html>
